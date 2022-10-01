@@ -15,7 +15,6 @@ public final class Test extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         getLogger().info("StartPlugin");
         getCommand("hat").setExecutor(new HatCommandExecutor());
         getCommand("setblock").setExecutor(new setblock());
@@ -35,7 +34,6 @@ public final class Test extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         for (String uuid : joinTime.keySet()) {
             config.getConfig().set("players." + uuid + ".joinTime", joinTime.get(uuid));
         }
