@@ -1,0 +1,21 @@
+name: Test
+version: '${project.version}'
+main: io.vannindev.test.Test
+commands:
+  hat:
+    description: Put your item in the main hand to the head.
+    permission: test.command.hat
+    permission-message: You do not have permission to perform this command.
+    usage: /hat (the sender of this command needs to be a player.)
+
+  setblock:
+    description: Put your item in the main hand to the head.
+
+permissions:
+  test.command.*:
+    description: Allows you to perform commands in this plugin.
+    children:
+      test.command.hat: true
+  test.command.hat:
+    description: Allows you to perform /hat command.
+    default: true
